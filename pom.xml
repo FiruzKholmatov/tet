@@ -49,8 +49,25 @@
                         <id>888-report-888</id>
 <!--                        <phase>verify</phase>-->
                         <goals>
-                            <goal>report</goal>
+                            <goal>check</goal>
                         </goals>
+                        <configuration>
+                            <rules>
+                                <rule>
+                                    <element>CLASS</element>
+                                    <excludes>
+                                        <exclude>*Test</exclude>
+                                    </excludes>
+                                    <limits>
+                                        <limit>
+                                            <counter>LINE</counter>
+                                            <value>COVEREDRATIO</value>
+                                            <minimum>100%</minimum>
+                                        </limit>
+                                    </limits>
+                                </rule>
+                            </rules>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
